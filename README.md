@@ -1,24 +1,16 @@
-# pioneer
+# Vue with Object Oriented
 
-## Project setup
-```
-npm install
-```
+We know that as the projects grow, business logic continues to grow. It's getting harder to manage this for Front-End as well. The repository that we exclude business logic from components
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## The project includes these design pattern and methodology
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
+Factory Pattern
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Stratejy Pattern
+
+Dependency Injection
+
+Entities
+
+Value Object
