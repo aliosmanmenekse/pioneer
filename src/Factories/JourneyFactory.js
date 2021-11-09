@@ -11,5 +11,7 @@ export default class JourneyFactory {
     if (Types.CONDITION === event.type) {
       return new Condition(element)
     }
+
+    return new Condition(element);
   }
 }

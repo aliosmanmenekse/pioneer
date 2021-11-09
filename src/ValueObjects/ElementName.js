@@ -2,6 +2,7 @@ import { Names } from '../Enums/ElementEnums'
 
 export default class ElementName {
   constructor (event) {
+    console.log(event, "event");
     this.event = event
   }
 

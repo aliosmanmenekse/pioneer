@@ -9,26 +9,26 @@ export default class Channel extends Element {
     super(element.id, element.parentId, ElementEvent)
 
     this.elementName = new ElementName(element.event)
-    this.statistics = {}
+    this._statistics = {}
   }
 
   /**
-	 * @return {string}
-	 */
+   * @return {string}
+   */
   get color () {
     return `t-c-${Colors[Types.CHANNEL]}`
   }
 
   /**
-	 * @return {string}
-	 */
+   * @return {string}
+   */
   get backgroundColor () {
     return `b-c-${Colors[Types.CHANNEL]}`
   }
 
   /**
-	 * @return {number}
-	 */
+  * @return {number}
+  */
   get variationId () {
     return this.element.personalization.builder_camp[0].variationId
   }
@@ -37,21 +37,21 @@ export default class Channel extends Element {
 	 * @return {number|string}
 	 */
   enterStatistics () {
-    return this.statistics.productElementStatistics.enter[this.variationId] || 0
+    return this._statistics.productElementStatistics.enter[this.variationId] || 0
   }
 
   /**
 	 * @return {number|string}
 	 */
   exitStatistics () {
-    return this.statistics.productElementStatistics.exit[this.variationId] || 0
+    return this._statistics.productElementStatistics.exit[this.variationId] || 0
   }
 
   /**
 	 * @return {number}
 	 */
   couponProceed () {
-    return this.statistics.couponProceedStatistics[this.variationId] || 0
+    return this._statistics.couponProceedStatistics[this.variationId] || 0
   }
 
   /**
@@ -73,22 +73,22 @@ export default class Channel extends Element {
   }
 
   /**
-	 * @private
-	 * @return {boolean}
-	 */
+   * @private
+   * @return {boolean}
+   */
   _canShowSkippedStatistics () {
     return this.elementName.isAppPush ||
-			this.elementName.isWebPush ||
-			this.elementName.isEmail ||
-			this.elementName.isSms ||
-			this.elementName.isWhatsapp
+      this.elementName.isWebPush ||
+      this.elementName.isEmail ||
+      this.elementName.isSms ||
+      this.elementName.isWhatsapp
   }
 
   /**
-	 * @param {object} statistics
-	 * @return {void}
-	 */
+   * @param {object} statistics
+   * @return {void}
+   */
   setStatistics (statistics) {
-    this.statistics = statistics
+    this._statistics = statistics
   }
 }
